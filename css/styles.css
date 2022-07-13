@@ -22,6 +22,7 @@
     --bg-robots-cart: rgba(47, 48, 58, 0.8);
     --hr: #ECECEC;
     --br-footer-mail: rgba(255, 255, 255, 0.3);
+    --bg-cart-color: rgba(33, 150, 243, 0.9);
 }
 
 ul {
@@ -327,11 +328,14 @@ color: var(--accent-color);
 }
 
 /* .robots-text {
+    display: flex;
     position: absolute;
-    background-color: var(--bg-robots-cart);
-    padding: 27px 0;
     width: 370px;
+    height: 70px;
     bottom: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-robots-cart);
 
     color: var(--primary-white-color);
     font-weight: 700;
@@ -343,9 +347,12 @@ color: var(--accent-color);
 .robots-text {
     display: flex;
     position: absolute;
-    width: 370px;
     height: 70px;
     bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
     background-image: linear-gradient(to right,
     rgba(47,
         48,
@@ -355,8 +362,7 @@ color: var(--accent-color);
         48,
         58,
         0.8));
-    justify-content: center;
-    align-items: center;
+    
 
     z-index: 2;
 
@@ -578,6 +584,7 @@ color: var(--accent-color);
 .filter-item:hover, .filter-item:focus {
     color: var(--primary-white-color);
     background-color: var(--accent-color);
+    box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 /* Портфолио */
@@ -590,11 +597,12 @@ color: var(--accent-color);
 
 .examples-item {
     width: calc((100% - 60px) / 3);
+    position: relative;
 }
 
-/* .examples-item:hover, .examples-item:focus {
-    outline: 1px solid var(--border-image);
-} */
+.examples-item:hover .examples-text {
+    opacity: 1;
+}
 
 .examples-item:hover, .examples-item:focus {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
@@ -617,10 +625,13 @@ color: var(--accent-color);
 }
 
 .examples-cart {
-    padding: 20px 24px;
     border-right: 1px solid var(--border-examples);
     border-bottom: 1px solid var(--border-examples);
     border-left: 1px solid var(--border-examples);
+}
+
+.elem-with-padding{
+    padding: 20px 24px;
 }
 
 .examples-title {
@@ -639,11 +650,23 @@ color: var(--accent-color);
 }
 
 .examples-text {
-    display: none;
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 294px;
+    padding-left: 24px;
+    padding-right: 24px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-cart-color);
+
     color: var(--primary-white-color);
     font-size: 18px;
     line-height: 1.56;
+    opacity: 0;
 }
+
 
 /* Footer */
 
