@@ -303,6 +303,10 @@ color: var(--accent-color);
     justify-content:center;
 }
 
+.robots-item {
+    position: relative;
+}
+
 .robots-item:not(:last-child) {
     margin-right: 30px;
     width: 370px;
@@ -322,9 +326,39 @@ color: var(--accent-color);
     display: block;
 }
 
-.robots-text {
+/* .robots-text {
+    position: absolute;
     background-color: var(--bg-robots-cart);
-    padding: 27px 84px 27px 85px;
+    padding: 27px 0;
+    width: 370px;
+    bottom: 0;
+
+    color: var(--primary-white-color);
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-align: center;
+} */
+
+.robots-text {
+    display: flex;
+    position: absolute;
+    width: 370px;
+    height: 70px;
+    bottom: 0;
+    background-image: linear-gradient(to right,
+    rgba(47,
+        48,
+        58,
+        0.8),
+    rgba(47,
+        48,
+        58,
+        0.8));
+    justify-content: center;
+    align-items: center;
+
+    z-index: 2;
 
     color: var(--primary-white-color);
     font-weight: 700;
