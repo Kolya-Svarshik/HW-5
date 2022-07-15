@@ -23,6 +23,8 @@
     --hr: #ECECEC;
     --br-footer-mail: rgba(255, 255, 255, 0.3);
     --bg-cart-color: rgba(33, 150, 243, 0.9);
+
+    --timing-function: cubic-bezier(0.4, 0, 0.2, 1)
 }
 
 ul {
@@ -144,6 +146,8 @@ body {
     font-size: 14px;
     line-height: 1.14;
     letter-spacing: 0.02em;
+
+    transition: color 250ms var(--timing-function);
 }
 
 .site-link:hover, .site-link:focus {
@@ -204,6 +208,8 @@ color: var(--accent-color);
     line-height: 1.14;
     letter-spacing: 0.02em;
     color: var(--primary-text-color);
+
+    transition: color 250ms var(--timing-function);
 }
 
 .mail-link:hover, .mail-link:focus {
@@ -462,6 +468,8 @@ color: var(--accent-color);
     border-radius: 50%;
     justify-content: center;
     align-items: center;
+
+    transition: background-color 250ms var(--timing-function), --color4 250ms var(--timing-function);
 }
 
 .icon-social {
@@ -529,6 +537,8 @@ color: var(--accent-color);
     height: 90px;
     border: 1px solid var(--border-image);
     border-radius: 4px;
+
+    transition: border-color 250ms var(--timing-function), --color4 250ms var(--timing-function);
 }
 
 .clients-link:focus, .clients-link:hover {
@@ -598,6 +608,8 @@ color: var(--accent-color);
     line-height: 1.63;
     text-align: center;
     cursor: pointer;
+
+    transition: color 250ms var(--timing-function), background-color 250ms var(--timing-function);
 }
 
 .filter-item:hover, .filter-item:focus {
@@ -616,11 +628,6 @@ color: var(--accent-color);
 
 .examples-item {
     width: calc((100% - 60px) / 3);
-    position: relative;
-}
-
-.examples-item:hover .examples-text {
-    opacity: 1;
 }
 
 .examples-item:hover, .examples-item:focus {
@@ -639,18 +646,42 @@ color: var(--accent-color);
     color: currentColor;
 }
 
+.examples-thump {
+    position: relative;
+    overflow: hidden;
+}
+
+.examples-item:hover .examples-overlay {
+    transform: translateY(0%);
+}
+
 .examples-img {
     display: block;
 }
 
 .examples-cart {
+    padding: 20px 24px;
     border-right: 1px solid var(--border-examples);
     border-bottom: 1px solid var(--border-examples);
     border-left: 1px solid var(--border-examples);
 }
 
-.elem-with-padding{
-    padding: 20px 24px;
+.examples-overlay {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-cart-color);
+
+    transform: translateY(101%);
+    
+    transition: transform 250ms var(--timing-function);
 }
 
 .examples-title {
@@ -669,21 +700,9 @@ color: var(--accent-color);
 }
 
 .examples-text {
-    display: flex;
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 294px;
-    padding-left: 24px;
-    padding-right: 24px;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--bg-cart-color);
-
     color: var(--primary-white-color);
     font-size: 18px;
     line-height: 1.56;
-    opacity: 0;
 }
 
 /* Страница 3 */
