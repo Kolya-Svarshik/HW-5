@@ -512,18 +512,6 @@ color: var(--accent-color);
     display: flex;
 }
 
-/* .clients-item {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 170px;
-    height: 90px;
-    border: 1px solid var(--border-image);
-    border-radius: 4px;
-    cursor: pointer;
-} */
-
 .clients-item:not(:last-child) {
     margin-right: 30px;
 }
@@ -544,7 +532,6 @@ color: var(--accent-color);
 .clients-link:focus, .clients-link:hover {
     border-color: var(--accent-color);
     --color4: var(--accent-color);
-
 }
 
 .icon-ya_co {
