@@ -284,7 +284,7 @@ body {
 
 /* Модальное окно */
 
-.backdor {
+.backdrop {
     position: fixed;
     top: 0;
     left: 0;
@@ -299,12 +299,12 @@ body {
     transition: opacity 250ms var(--timing-function);
 }
 
-.backdor.is-hidden {
+.backdrop.is-hidden {
     opacity: 0;
     pointer-events: none;
 }
 
-.backdor.is-hidden .form-data {
+.backdrop.is-hidden .form-data {
     transform: translate(-50%, -50%) scale(1.1);
 }
 
@@ -318,8 +318,7 @@ body {
     padding: 40px;
     border-radius: 4px;
 
-    /* background-color: var(--primary-white-color); */
-    background-color: var(--br-exit-color);
+    background-color: var(--primary-white-color);
 
     transform: translate(-50%, -50%) scale(1);
 

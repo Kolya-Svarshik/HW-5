@@ -69,12 +69,23 @@
       <section class="hero">
         <div class="hero-element">
           <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-          <!-- <a href="" class="link-button primary">Заказать услугу</a> -->
-          <button type="button" class="link-button primary">
+          <button data-open-modal class="link-button primary">
             Заказать услугу
           </button>
         </div>
       </section>
+
+          <!-- Modal -->
+
+          <div class="backdrop is-hidden" data-backdrop>
+            <div class="modal">
+              <button data-close-modal class="data-exit">
+                <svg class="icon-exit">
+                  <use href="./images/form-data.svg#icon-exit"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
 
       <!-- Преимущества -->
 
@@ -591,21 +602,6 @@
         </div>
       </section>
     </footer>
-
-    <script>
-      (() => {
-        document
-          .querySelector(".js-speaker-form")
-          .addEventListener("submit", (e) => {
-            e.preventDefault();
-
-            new FormData(e.currentTarget).forEach((value, name) =>
-              console.log(`${name}: ${value}`)
-            );
-
-            e.currentTarget.reset();
-          });
-      })();
-    </script>
+    <script src="./index.js"></script>
   </body>
 </html>
