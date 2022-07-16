@@ -61,8 +61,23 @@
     </header>
     <main>
       <section class="portfolio">
+        <button data-open-modal class="link-button primary">
+          Заказать услугу
+        </button>
         <div class="contacts">
-          <h1 class="contacts-text">ERROR 404</h1>
+          <!-- <h1 class="contacts-text">ERROR 404</h1> -->
+
+          <!-- Modal -->
+
+          <div class="backdrop is-hidden" data-backdrop>
+            <div class="modal">
+              <button data-close-modal class="data-exit">
+                <svg class="icon-exit">
+                  <use href="./images/form-data.svg#icon-exit"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -148,19 +163,21 @@
               </li>
             </ul>
           </div>
-          
-          <form action="" class="form">
+
+          <form class="form js-speaker-form">
             <label for="">
               <p class="form-title">ПОДПИШИТЕСЬ НА РАССЫЛКУ</p>
               <input
                 class="form-input"
-                type="mail"
-                name="mail"
+                type="email"
+                name="email"
                 placeholder="E-mail"
+                autocomplete="email"
               />
             </label>
-            <button type="button" class="form-button">
-              Подписаться<svg class="icon-airplane">
+            <button type="submit" class="form-button">
+              Подписаться
+              <svg class="icon-airplane">
                 <use href="./images/sprite.svg#icon-airplane"></use>
               </svg>
               <svg class="icon-mail">
@@ -171,5 +188,42 @@
         </div>
       </section>
     </footer>
+
+    <script>
+      (() => {
+        document
+          .querySelector(".js-speaker-form")
+          .addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            new FormData(e.currentTarget).forEach((value, name) =>
+              console.log(`${name}: ${value}`)
+            );
+
+            e.currentTarget.reset();
+          });
+      })();
+    </script>
+
+    <script>
+      const refs = {
+        openModalBtn: document.querySelector("[data-open-modal]"),
+        closeModalBtn: document.querySelector("[data-close-modal]"),
+        backdrop: document.querySelector("[data-backdrop]"),
+      };
+
+      refs.openModalBtn.addEventListener("click", toggleModal);
+      refs.closeModalBtn.addEventListener("click", toggleModal);
+
+      refs.backdrop.addEventListener("click", logBackdropClick);
+
+      function toggleModal() {
+        refs.backdrop.classList.toggle("is-hidden");
+      }
+
+      function logBackdropClick() {
+        console.log("Это клик в бекдроп");
+      }
+    </script>
   </body>
 </html>
