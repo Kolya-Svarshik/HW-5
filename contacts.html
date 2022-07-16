@@ -62,7 +62,7 @@
     <main>
       <section class="portfolio">
         <div class="contacts">
-          <h1 class="contacts-text">ERROR 405</h1>
+          <h1 class="contacts-text">ERROR 404</h1>
         </div>
       </section>
     </main>
@@ -148,19 +148,26 @@
               </li>
             </ul>
           </div>
-          <div class="subscribe">
-            <p class="subscribe-title">ПОДПИШИТЕСЬ НА РАССЫЛКУ</p>
-            <ul class="subscribe-list">
-              <li class="subscribe-mail">E-mail</li>
-              <li class="subscribe-button">
-                <button type="button" class="subscribe-element">
-                  Подписаться<svg class="icon-airplane">
-                    <use href="./images/sprite.svg#icon-airplane"></use>
-                  </svg>
-                </button>
-              </li>
-            </ul>
-          </div>
+          
+          <form action="" class="form">
+            <label for="">
+              <p class="form-title">ПОДПИШИТЕСЬ НА РАССЫЛКУ</p>
+              <input
+                class="form-input"
+                type="mail"
+                name="mail"
+                placeholder="E-mail"
+              />
+            </label>
+            <button type="button" class="form-button">
+              Подписаться<svg class="icon-airplane">
+                <use href="./images/sprite.svg#icon-airplane"></use>
+              </svg>
+              <svg class="icon-mail">
+                <use href="./images/sprite.svg#icon-mail"></use>
+              </svg>
+            </button>
+          </form>
         </div>
       </section>
     </footer>

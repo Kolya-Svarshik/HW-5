@@ -563,21 +563,46 @@
               </li>
             </ul>
           </div>
-          <div class="subscribe">
-            <p class="subscribe-title">ПОДПИШИТЕСЬ НА РАССЫЛКУ</p>
-            <ul class="subscribe-list">
-              <li class="subscribe-mail">E-mail</li>
-              <li class="subscribe-button">
-                <button type="button" class="subscribe-element">
-                  Подписаться<svg class="icon-airplane">
-                    <use href="./images/sprite.svg#icon-airplane"></use>
-                  </svg>
-                </button>
-              </li>
-            </ul>
-          </div>
+
+          <form class="form js-speaker-form">
+            <label for="">
+              <p class="form-title">ПОДПИШИТЕСЬ НА РАССЫЛКУ</p>
+              <input
+                class="form-input"
+                type="email"
+                name="email"
+                placeholder="E-mail"
+                autocomplete="email"
+              />
+            </label>
+            <button type="submit" class="form-button">
+              Подписаться
+              <svg class="icon-airplane">
+                <use href="./images/sprite.svg#icon-airplane"></use>
+              </svg>
+              <svg class="icon-mail">
+                <use href="./images/sprite.svg#icon-mail"></use>
+              </svg>
+            </button>
+          </form>
         </div>
       </section>
     </footer>
+
+    <script>
+      (() => {
+        document
+          .querySelector(".js-speaker-form")
+          .addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            new FormData(e.currentTarget).forEach((value, name) =>
+              console.log(`${name}: ${value}`)
+            );
+
+            e.currentTarget.reset();
+          });
+      })();
+    </script>
   </body>
 </html>
