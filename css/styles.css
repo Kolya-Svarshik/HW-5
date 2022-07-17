@@ -322,7 +322,7 @@ textarea {
     left: 50%;
 
     width: 528px;
-    height: 581px;
+    min-height: 581px;
     padding: 40px;
     border-radius: 4px;
 
@@ -330,7 +330,7 @@ textarea {
 
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
 
-    z-index: 1;
+    z-index: 99;
 
     transform: translate(-50%, -50%) scale(1);
 
@@ -414,7 +414,7 @@ textarea {
     display: block;
 }
 
-/* .robots-text {
+.robots-text {
     display: flex;
     position: absolute;
     width: 370px;
@@ -429,9 +429,9 @@ textarea {
     font-size: 14px;
     line-height: 1.14;
     text-align: center;
-} */
+}
 
-.robots-text {
+/* .robots-text {
     display: flex;
     position: absolute;
     height: 70px;
@@ -458,7 +458,7 @@ textarea {
     font-size: 14px;
     line-height: 1.14;
     text-align: center;
-}
+} */
 
 /* Наша команда */
 
@@ -665,6 +665,7 @@ textarea {
 }
 
 .data-list {
+    display: block;
     position: relative;
 }
 
@@ -680,6 +681,8 @@ textarea {
 
 .data-text {
     letter-spacing: 0.01em;
+
+    cursor: pointer;
 }
 
 .data-item {
@@ -716,6 +719,12 @@ textarea {
     text-align: center;
 
     margin-bottom: 30px;
+}
+
+.data-link {
+    color: var(--accent-color);
+
+    text-decoration: underline;
 }
 
 .data-submit {
